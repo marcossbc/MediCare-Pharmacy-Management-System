@@ -4,6 +4,7 @@ import { Menu, LogOut, Bell } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import ThemeToggle from './ThemeToggle';
 
+
 interface HeaderProps {
   onOpenMobile: () => void;
   title?: string;
@@ -54,7 +55,7 @@ export default function Header({ onOpenMobile, title = 'Dashboard', alertCount =
             className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-500 hover:bg-red-50 hover:text-red-600 dark:text-gray-300 dark:hover:bg-red-950/50"
             title="Sign out"
           >
-            <LogOut className="h-[18px] w-[18px]" />Logout
+            <LogOut className="h-[18px] w-[18px]" />
           </button>
         </div>
       </div>
