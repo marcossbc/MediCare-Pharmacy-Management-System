@@ -12,17 +12,29 @@ interface ProductFormProps {
   onSuccess: () => void;
 }
 
+// const CATEGORY_OPTIONS = [
+//   'Analgesics',
+//   'Antibiotics',
+//   'Antiseptics',
+//   'Vitamins & Supplements',
+//   'Cold & Flu',
+//   'Cardiovascular',
+//   'Diabetes Care',
+//   'Skin Care',
+//   'First Aid',
+//   'Other',
+// ];
 const CATEGORY_OPTIONS = [
-  'Analgesics',
-  'Antibiotics',
-  'Antiseptics',
-  'Vitamins & Supplements',
-  'Cold & Flu',
-  'Cardiovascular',
-  'Diabetes Care',
-  'Skin Care',
-  'First Aid',
-  'Other',
+  'Daawooyinka Xanuunka (Analgesics)',
+  'Daawooyinka Caabuqa (Antibiotics)',
+  'Jeermis-dileyaal (Antiseptics)',
+  'Fiitamiino iyo Kaabis (Vitamins & Supplements)',
+  'Daawooyinka Hargabka (Cold & Flu)',
+  'Daawooyinka Wadnaha (Cardiovascular)',
+  'Daawooyinka Sonkorowga (Diabetes Care)',
+  'Daawooyinka Maqaarka (Skin Care)',
+  'Gargaarka Degdega ah (First Aid)',
+  'Kale (Other)',
 ];
 
 export default function ProductForm({ product, onSuccess }: ProductFormProps) {
