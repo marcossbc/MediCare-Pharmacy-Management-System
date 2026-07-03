@@ -1,5 +1,15 @@
 # 💊 MediCare Pharmacy Management System
 
+
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![NextAuth.js](https://img.shields.io/badge/NextAuth.js-Secure-green?logo=nextdotjs)
+![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
+
+
 A modern Pharmacy Management System built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **MongoDB**.
 
 ---
