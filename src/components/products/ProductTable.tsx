@@ -13,6 +13,7 @@ import { ProductDTO } from '@/types';
 import { formatCurrency, formatDate, daysUntil } from '@/lib/utils';
 import { exportProductsToExcel } from '@/lib/exportExcel';
 import toast from 'react-hot-toast';
+import { useSession } from 'next-auth/react';
 
 export default function ProductTable({ products }: { products: ProductDTO[] }) {
   const router = useRouter();
@@ -20,6 +21,9 @@ export default function ProductTable({ products }: { products: ProductDTO[] }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<ProductDTO | undefined>();
   const [deletingId, setDeletingId] = useState<string | null>(null);
+
+  const {data: session} = useSession();
+  const isAdmin = session?.user?.role === 'admin';
 
   const filtered = useMemo(() => {
     if (!search.trim()) return products;
