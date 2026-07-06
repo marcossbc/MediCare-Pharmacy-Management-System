@@ -12,6 +12,7 @@ export interface IProduct {
   supplierName: string;
   batchNumber?: string;
   description?: string;
+  // image:
   createdAt?: Date;
   updatedAt?: Date;
 }
