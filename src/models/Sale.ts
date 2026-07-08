@@ -15,7 +15,7 @@ export interface ISale {
   totalAmount: number;
   totalProfit: number;
   customerName?: string;
-  paymentMethod: 'cash' | 'card' | 'insurance' | 'other';
+  paymentMethod: 'MY CASH' | 'GolisCard' | 'EDAHABPlus' | 'other';
   soldBy: Types.ObjectId;
 }
 
@@ -43,8 +43,8 @@ const SaleSchema = new Schema(
     },
     paymentMethod: {
       type: String,
-      enum: ['cash', 'card', 'insurance', 'other'],
-      default: 'cash',
+      enum: ['MY CASH', 'GolisCard', 'EDAHABPlus', 'other'],
+      default: 'MY CASH',
     },
     soldBy: {
       type: Schema.Types.ObjectId,

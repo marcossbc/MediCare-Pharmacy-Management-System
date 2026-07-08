@@ -23,7 +23,7 @@ export interface CreateSaleResult {
 export async function createSale(
   items: CartItemInput[],
   customerName: string,
-  paymentMethod: 'cash' | 'card' | 'insurance' | 'other'
+  paymentMethod: 'MY CASH' | 'GolisCard' | 'EDAHABPlus' | 'other'
 ): Promise<CreateSaleResult> {
   if (!items || items.length === 0) {
     return {

@@ -23,9 +23,9 @@ export default function InvoicePrint({ sale }: { sale: SaleDTO }) {
       <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-8 print:border-none print:shadow-none">
         <div className="flex items-start justify-between border-b border-gray-100 dark:border-gray-800 pb-6">
           <div>
-            <h2 className="text-xl font-bold text-primary-700">ILHEYSCare Pharmacy</h2>
+            <h2 className="text-xl font-bold text-primary-700">ILEYSCARE Pharmacy</h2>
             <p className="mt-1 text-sm text-gray-500">123 Wellness Ave, Health City</p>
-            <p className="text-sm text-gray-500">Phone: (000) 123-4567</p>
+            <p className="text-sm text-gray-500">Phone :907564618</p>
           </div>
           <div className="text-right">
             <p className="text-sm font-semibold text-gray-800 dark:text-gray-100">
@@ -94,4 +94,4 @@ export default function InvoicePrint({ sale }: { sale: SaleDTO }) {
 }
 
 
-//IN AAN SOOBANDHIGO CASH AMA PEYMENT MARKAA LAGU IIBIYEY CARD KAL UDAWAN
+

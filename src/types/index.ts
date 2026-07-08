@@ -30,7 +30,7 @@ export interface SaleDTO {
   totalAmount: number;
   totalProfit: number;
   customerName?: string;
-  paymentMethod: 'cash' | 'card' | 'insurance' | 'other';
+  paymentMethod: 'MY CASH' | 'GolisCard' | 'EDAHABPlus' | 'other';
   soldBy: { _id: string; name: string } | string;
   createdAt: string;
 }

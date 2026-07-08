@@ -8,7 +8,7 @@ export function exportReportToPDF(report: ReportSummary) {
 
   doc.setFontSize(18);
   doc.setTextColor(19, 132, 91);
-  doc.text('MediCare Pharmacy', 14, 18);
+  doc.text('ILEYSCARE Pharmacy', 14, 18);
 
   doc.setFontSize(12);
   doc.setTextColor(60, 60, 60);
@@ -62,7 +62,7 @@ export function exportInvoiceToPDF(sale: SaleDTO) {
 
   doc.setFontSize(20);
   doc.setTextColor(19, 132, 91);
-  doc.text('MediCare Pharmacy', 14, 20);
+  doc.text('ILEYSCARE Pharmacy', 14, 20);
 
   doc.setFontSize(10);
   doc.setTextColor(100, 100, 100);
@@ -97,7 +97,7 @@ export function exportInvoiceToPDF(sale: SaleDTO) {
 
   doc.setFontSize(9);
   doc.setTextColor(140, 140, 140);
-  doc.text('Thank you for choosing MediCare Pharmacy.', 14, finalY + 15);
+  doc.text('Thank you for choosing ILEYSCARE Pharmacy.', 14, finalY + 15);
 
   doc.save(`invoice-${sale.invoiceNumber}.pdf`);
 }

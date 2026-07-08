@@ -20,7 +20,7 @@ export default function InvoiceForm({ products }: { products: ProductDTO[] }) {
   const router = useRouter();
   const [cart, setCart] = useState<CartLine[]>([]);
   const [customerName, setCustomerName] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState<'MY CASH' | 'GolisCard' | 'EDAHAB SOMTEL' | 'other'>('MY CASH');
+  const [paymentMethod, setPaymentMethod] = useState<'MY CASH' | 'GolisCard' | 'EDAHABPlus' | 'other'>('MY CASH');
   const [loading, setLoading] = useState(false);
 
   const total = useMemo(
@@ -177,7 +177,7 @@ export default function InvoiceForm({ products }: { products: ProductDTO[] }) {
             >
               <option value="MY CASH">MY CASH</option>
               <option value="GolisCard">GolisCard</option>
-              <option value="EDAHABPLUS">EDAHABPlus</option>
+              <option value="EDAHABPlus">EDAHABPlus</option>
               <option value="other">Other</option>
             </Select>
           </div>
