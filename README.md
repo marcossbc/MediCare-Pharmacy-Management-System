@@ -216,8 +216,8 @@ Password: Admin@12345
 ## 📖 LOGIN PAGE
 
 
-<p align="center">
-  <img src="/pharmacy-management-system/src/images/login.png" alt="TaskFlows Dashboard" width="100%">
+<<p align="center">
+  <img src="./images/login.png" alt="Login Page" width="100%">
 </p>
 ## 👥 User Roles
 
