@@ -48,7 +48,7 @@ export default function LoginPage() {
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15">
             <Cross className="h-6 w-6" />
           </div>
-          <span className="text-lg font-bold">MediCare</span>
+          <span className="text-lg font-bold">ILEYSCARE</span>
         </div>
 
         <div>
@@ -63,7 +63,7 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <p className="text-sm text-primary-200">© {new Date().getFullYear()} MediCare Pharmacy Systems</p>
+        <p className="text-sm text-primary-200">© {new Date().getFullYear()} ILEYSCARE Pharmacy Systems</p>
       </div>
 
       {/* Right form panel */}
@@ -73,7 +73,7 @@ export default function LoginPage() {
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-600 text-white">
               <Cross className="h-5 w-5" />
             </div>
-            <span className="text-lg font-bold text-gray-800 dark:text-gray-100">MediCare</span>
+            <span className="text-lg font-bold text-gray-800 dark:text-gray-100">ILEYSCARE</span>
           </div>
 
           <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Sign in</h2>
@@ -125,7 +125,7 @@ export default function LoginPage() {
           </form>
 
           <p className="mt-6 text-center text-xs text-gray-400">
-            Default admin credentials are set via the seed script (see README).
+            Authorized users only. Contact your administrator for access.
           </p>
         </div>
       </div>

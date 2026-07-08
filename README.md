@@ -14,6 +14,15 @@ A modern Pharmacy Management System built with **Next.js 14**, **TypeScript**, *
 
 ---
 
+
+## 📖 dashbourd overview
+
+
+<p align="center">
+  <img src="/pharmacy-management-system/src/images/dashbourd overwiew.png" alt="TaskFlows Dashboard" width="100%">
+</p>
+
+
 ## 🚀 Features
 
 ### 📊 Dashboard
@@ -204,6 +213,12 @@ Password: Admin@12345
 
 ---
 
+## 📖 LOGIN PAGE
+
+
+<p align="center">
+  <img src="/pharmacy-management-system/src/images/login.png" alt="TaskFlows Dashboard" width="100%">
+</p>
 ## 👥 User Roles
 
 ### Admin
