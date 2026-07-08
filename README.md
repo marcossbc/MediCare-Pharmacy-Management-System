@@ -19,7 +19,7 @@ A modern Pharmacy Management System built with **Next.js 14**, **TypeScript**, *
 
 
 <p align="center">
-  <img src="/pharmacy-management-system/src/images/dashbourd overwiew.png" alt="TaskFlows Dashboard" width="100%">
+  <img src="/pharmacy-management-system/images/dashbourd overwiew.png" alt="TaskFlows Dashboard" width="100%">
 </p>
 
 
