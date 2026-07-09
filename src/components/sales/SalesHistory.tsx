@@ -1,13 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { Plus } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Plus, Trash2 } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { Table, Thead, Tbody, Tr, Th, Td } from '@/components/ui/Table';
 import { Badge } from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import { SaleDTO } from '@/types';
 import { formatCurrency, formatDateTime } from '@/lib/utils';
+import toast from 'react-hot-toast';
 
 const paymentVariant: Record<string, 'success' | 'info' | 'warning' | 'neutral'> = {
   cash: 'success',
@@ -17,10 +19,36 @@ const paymentVariant: Record<string, 'success' | 'info' | 'warning' | 'neutral'>
 };
 
 export default function SalesHistory({ sales }: { sales: SaleDTO[] }) {
+  const router = useRouter();
+
+  async function handleDelete(id: string) {
+    if (!confirm('Are you sure you want to delete this sale?')) return;
+
+    try {
+      const res = await fetch(`/api/sales/${id}`, {
+        method: 'DELETE',
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || 'Failed to delete sale');
+      }
+
+      toast.success('Sale deleted successfully');
+      router.refresh();
+    } catch (err: any) {
+      toast.error(err.message);
+    }
+  }
+
   return (
     <Card>
       <div className="flex items-center justify-between border-b border-gray-100 dark:border-gray-800 p-5">
-        <p className="text-sm text-gray-500 dark:text-gray-400">{sales.length} recent invoices</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          {sales.length} recent invoices
+        </p>
+
         <Link href="/sales/new">
           <Button>
             <Plus className="h-4 w-4" /> New Sale
@@ -37,11 +65,10 @@ export default function SalesHistory({ sales }: { sales: SaleDTO[] }) {
             <Th>Items</Th>
             <Th>Payment</Th>
             <Th>Total</Th>
-            <Th className="text-right">Action</Th>
-            <Th>UPDATE</Th>
-            <Th>DELETE</Th>
+            <Th className="text-right">Actions</Th>
           </Tr>
         </Thead>
+
         <Tbody>
           {sales.length === 0 ? (
             <Tr>
@@ -52,20 +79,47 @@ export default function SalesHistory({ sales }: { sales: SaleDTO[] }) {
           ) : (
             sales.map((s) => (
               <Tr key={s._id}>
-                <Td className="font-medium text-gray-800 dark:text-gray-100">{s.invoiceNumber}</Td>
+                <Td className="font-medium text-gray-800 dark:text-gray-100">
+                  {s.invoiceNumber}
+                </Td>
+
                 <Td>{formatDateTime(s.createdAt)}</Td>
+
                 <Td>{s.customerName || 'Walk-in'}</Td>
-                <Td>{s.items.reduce((sum, i) => sum + i.quantity, 0)} items</Td>
+
                 <Td>
-                  <Badge variant={paymentVariant[s.paymentMethod]} className="capitalize">
+                  {s.items.reduce((sum, i) => sum + i.quantity, 0)} items
+                </Td>
+
+                <Td>
+                  <Badge
+                    variant={paymentVariant[s.paymentMethod]}
+                    className="capitalize"
+                  >
                     {s.paymentMethod}
                   </Badge>
                 </Td>
-                <Td className="font-semibold">{formatCurrency(s.totalAmount)}</Td>
+
+                <Td className="font-semibold">
+                  {formatCurrency(s.totalAmount)}
+                </Td>
+
                 <Td className="text-right">
-                  <Link href={`/sales/${s._id}`} className="text-xs font-medium text-primary-600 hover:underline">
-                    View Invoice
-                  </Link>
+                  <div className="flex justify-end items-center gap-2">
+                    <Link
+                      href={`/sales/${s._id}`}
+                      className="text-xs font-medium text-primary-600 hover:underline"
+                    >
+                      View Invoice
+                    </Link>
+
+                    <button
+                      onClick={() => handleDelete(s._id)}
+                      className="rounded-lg p-2 text-gray-400 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/40"
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </button>
+                  </div>
                 </Td>
               </Tr>
             ))
