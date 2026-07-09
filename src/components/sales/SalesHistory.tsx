@@ -38,6 +38,8 @@ export default function SalesHistory({ sales }: { sales: SaleDTO[] }) {
             <Th>Payment</Th>
             <Th>Total</Th>
             <Th className="text-right">Action</Th>
+            <Th>UPDATE</Th>
+            <Th>DELETE</Th>
           </Tr>
         </Thead>
         <Tbody>
