@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import {
   LayoutDashboard,
   Pill,
@@ -12,6 +12,7 @@ import {
   Users,
   Cross,
   X,
+  LogOut,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -81,14 +82,34 @@ export default function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
           })}
       </nav>
 
-      <div className="border-t border-gray-100 dark:border-gray-800 px-5 py-4">
-        <p className="text-xs text-gray-400">Signed in as</p>
-        <p className="truncate text-sm font-medium text-gray-700 dark:text-gray-200">
-          {session?.user?.name}
-        </p>
-        <span className="mt-1 inline-block rounded-full bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-[11px] capitalize text-gray-500 dark:text-gray-400">
-          {role}
-        </span>
+    
+      <div className="border-t border-gray-100 dark:border-gray-800 p-4">
+        <div className="flex items-center justify-between rounded-xl bg-gray-50/50 dark:bg-gray-800/30 p-3 backdrop-blur-sm">
+          <div className="flex items-center gap-3 overflow-hidden">
+            {/* Avatar Circle */}
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-950 text-sm font-semibold text-primary-700 dark:text-primary-300">
+              {session?.user?.name ? session.user.name.charAt(0).toUpperCase() : 'U'}
+            </div>
+            
+          
+            <div className="overflow-hidden">
+              <p className="truncate text-sm font-semibold text-gray-800 dark:text-gray-200">
+                {session?.user?.name || 'User Name'}
+              </p>
+              <span className="inline-block rounded-md bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/50 px-1.5 py-0.5 text-[10px] font-medium capitalize text-gray-500 dark:text-gray-400 shadow-sm">
+                {role}
+              </span>
+            </div>
+          </div>
+
+          <button
+            onClick={() => signOut({ callbackUrl: '/login' })}
+            title="Sign Out"
+            className="rounded-lg p-2 text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-red-500 dark:hover:text-red-400 shadow-sm hover:shadow transition-all group"
+          >
+            <LogOut className="h-4.5 w-4.5 h-[18px] w-[18px] group-hover:translate-x-0.5 transition-transform" />
+          </button>
+        </div>
       </div>
     </div>
   );
