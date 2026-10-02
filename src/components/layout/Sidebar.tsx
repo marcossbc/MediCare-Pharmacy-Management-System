@@ -40,7 +40,7 @@ export default function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
       <div className="flex items-center justify-between px-5 py-5">
         <Link href="/dashboard" className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-600 text-white">
-            <Cross className="h-5 w-5" />
+            <LayoutDashboard className="h-5 w-5" />
           </div>
           <div>
             <p className="text-sm font-bold leading-tight text-gray-800 dark:text-gray-100">

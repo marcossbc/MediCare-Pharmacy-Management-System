@@ -24,6 +24,7 @@ export default function InvoicePrint({ sale }: { sale: SaleDTO }) {
         <div className="flex items-start justify-between border-b border-gray-100 dark:border-gray-800 pb-6">
           <div>
             <h2 className="text-xl font-bold text-primary-700">ILEYSCARE Pharmacy</h2>
+            
             <p className="mt-1 text-sm text-gray-500">123 Wellness Ave, Health City</p>
             <p className="text-sm text-gray-500">Phone :907564618</p>
           </div>
