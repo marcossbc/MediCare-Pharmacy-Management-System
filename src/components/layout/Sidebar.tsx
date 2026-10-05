@@ -46,7 +46,7 @@ export default function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
             <p className="text-sm font-bold leading-tight text-gray-800 dark:text-gray-100">
               SAHAL CARE
             </p>
-            <p className="text-[11px] text-gray-400 leading-tight">SAHAL CARE  Pharmacy System</p>
+            <p className="text-[11px] text-gray-400 leading-tight">SAHAL Pharmacy System</p>
           </div>
         </Link>
         <button
