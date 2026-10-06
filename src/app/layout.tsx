@@ -7,7 +7,7 @@ import AuthProvider from '@/components/providers/AuthProvider';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'MediCare | Pharmacy Management System',
+  title: 'Sahal Care | Pharmacy Management System',
   description: 'A modern pharmacy management system for inventory, sales, and reporting.',
 };
 

@@ -51,7 +51,7 @@ export default function SalesHistory({ sales }: { sales: SaleDTO[] }) {
 
         <Link href="/sales/new">
           <Button>
-            <Plus className="h-4 w-4" /> New Sale
+            <Plus className="h-4 w-4" /> New SaleS
           </Button>
         </Link>
       </div>
