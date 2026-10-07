@@ -48,7 +48,7 @@ export default function LoginPage() {
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15">
             <Cross className="h-6 w-6" />
           </div>
-          <span className="text-lg font-bold">ILEYSCARE</span>
+          <span className="text-lg font-bold">SAHAL CARE </span>
         </div>
 
         <div>
@@ -63,7 +63,7 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <p className="text-sm text-primary-200">© {new Date().getFullYear()} ILEYSCARE Pharmacy Systems</p>
+        <p className="text-sm text-primary-200">© {new Date().getFullYear()} SAHAL CARE  Pharmacy Systems</p>
       </div>
 
       {/* Right form panel */}
